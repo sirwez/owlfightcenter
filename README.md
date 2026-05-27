@@ -1,12 +1,8 @@
 # Owl Fight Center
 
-Projeto atualizado com:
+## URLs amigáveis no GitHub Pages
+- Página inicial: `/owlfightcenter/` (sem `index.html`)
+- FAQ: `/owlfightcenter/#faq`
+- Para páginas internas sem `.html`, o ideal é usar pastas com `index.html`, por exemplo: `/owlfightcenter/atletas/`, `/owlfightcenter/muaythai/`, `/owlfightcenter/timeline/`, `/owlfightcenter/estilo/`.
 
-- Landing page principal (`index.html`)
-- FAQ / Perguntas Frequentes incluindo primeira aula
-- Página profissional de atletas com filtros e modal (`atletas.html`)
-- Página sobre história e estilos do Muay Thai (`muaythai.html`)
-- Página separada da linha do tempo da Owl (`timeline.html`)
-- Quiz interativo: Descubra seu estilo de Muay Thai (`estilo.html`)
-
-Abra `index.html` no navegador ou publique todos os arquivos no GitHub Pages.
+Nesta versão do projeto, os arquivos principais continuam em `.html`, mas você já pode usar a home sem `index.html`.
