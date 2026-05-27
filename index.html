@@ -3,49 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Owl Fight Center: academia 100% especializada em Muay Thai em Timon. Treinos do básico ao avançado com o professor Jhonata Souza." />
   <title>Owl Fight Center | Muay Thai em Timon</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --gold: #f8be16;
-      --gold-2: #ffdf6e;
-      --dark: #070707;
-      --dark-2: #121212;
-      --line: rgba(255,255,255,.12);
+      --gold: #f6bd16;
+      --gold-2: #ffd96d;
+      --black: #050505;
+      --panel: #0d0d0d;
+      --muted: rgba(255, 255, 255, .68);
+      --line: rgba(255, 255, 255, .12);
     }
 
     * { scroll-behavior: smooth; }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #050505;
-      color: white;
+      background: var(--black);
+      color: #fff;
       overflow-x: hidden;
     }
 
     .font-display { font-family: 'Anton', sans-serif; letter-spacing: .02em; }
-
-    .hero-bg {
-      background:
-        radial-gradient(circle at 75% 10%, rgba(248,190,22,.22), transparent 34%),
-        radial-gradient(circle at 15% 85%, rgba(248,190,22,.12), transparent 35%),
-        linear-gradient(120deg, rgba(0,0,0,.96), rgba(8,8,8,.84)),
-        url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1800&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .grain:before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: .22;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.35'/%3E%3C/svg%3E");
-      mix-blend-mode: screen;
-    }
 
     .gold-text {
       background: linear-gradient(135deg, var(--gold), var(--gold-2));
@@ -54,24 +39,46 @@
       color: transparent;
     }
 
+    .hero-bg {
+      background:
+        radial-gradient(circle at 78% 18%, rgba(246, 189, 22, .26), transparent 30%),
+        radial-gradient(circle at 12% 80%, rgba(246, 189, 22, .16), transparent 34%),
+        linear-gradient(110deg, rgba(0, 0, 0, .96), rgba(0, 0, 0, .68)),
+        url('https://images.unsplash.com/photo-1517438322307-e67111335449?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .grain::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.33'/%3E%3C/svg%3E");
+      mix-blend-mode: screen;
+    }
+
     .btn-gold {
-      background: linear-gradient(135deg, #f8be16, #fff0a5);
-      color: #080808;
-      box-shadow: 0 16px 45px rgba(248,190,22,.22);
+      background: linear-gradient(135deg, #f6bd16, #fff0ad);
+      color: #050505;
+      box-shadow: 0 18px 48px rgba(246, 189, 22, .24);
       transition: .25s ease;
     }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 20px 55px rgba(248,190,22,.32); }
+
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 22px 60px rgba(246, 189, 22, .34); }
 
     .btn-dark {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .14);
       transition: .25s ease;
     }
-    .btn-dark:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
+
+    .btn-dark:hover { background: rgba(255, 255, 255, .13); transform: translateY(-2px); }
 
     .glass {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255, 255, 255, .065);
+      border: 1px solid rgba(255, 255, 255, .12);
       backdrop-filter: blur(18px);
     }
 
@@ -87,7 +94,7 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -6px;
+      bottom: -8px;
       width: 0;
       height: 2px;
       background: var(--gold);
@@ -95,92 +102,88 @@
     }
     .nav-link:hover::after { width: 100%; }
 
-    .fight-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.11);
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025));
+      border: 1px solid rgba(255, 255, 255, .11);
       transition: .25s ease;
     }
-    .fight-card:hover { transform: translateY(-6px); border-color: rgba(248,190,22,.45); }
+    .card:hover { transform: translateY(-6px); border-color: rgba(246, 189, 22, .46); }
 
-    .diagonal {
-      clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
-    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: .72s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: 460px; }
 
     .schedule-row {
       display: grid;
       grid-template-columns: 86px repeat(5, minmax(42px, 1fr));
-      align-items: center;
       gap: 8px;
+      align-items: center;
     }
 
-    .slot-on, .slot-off {
+    .time-pill, .slot-on, .slot-off {
       min-height: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 14px;
+      border-radius: 15px;
       font-weight: 900;
-    }
-
-    .slot-on {
-      background: rgba(248,190,22,.16);
-      border: 1px solid rgba(248,190,22,.42);
-      color: #ffd34e;
-    }
-    .slot-off {
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(255,255,255,.09);
-      color: rgba(255,255,255,.28);
     }
 
     .time-pill {
-      min-height: 42px;
+      background: rgba(0, 0, 0, .44);
+      border: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .slot-on {
+      background: rgba(246, 189, 22, .16);
+      border: 1px solid rgba(246, 189, 22, .44);
+      color: #ffd55e;
+    }
+
+    .slot-off {
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(255, 255, 255, .09);
+      color: rgba(255, 255, 255, .26);
+    }
+
+    .marquee {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 14px;
-      background: rgba(0,0,0,.38);
-      border: 1px solid rgba(255,255,255,.12);
-      font-weight: 900;
-      color: #fff;
+      width: max-content;
+      animation: marquee 24s linear infinite;
     }
 
-    .floating-card { animation: floaty 4s ease-in-out infinite; }
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
-    .reveal { opacity: 0; transform: translateY(22px); transition: .7s ease; }
-    .reveal.show { opacity: 1; transform: translateY(0); }
-
-    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
-    .mobile-menu.open { max-height: 420px; }
+    .athlete-img { filter: grayscale(.08) contrast(1.05); }
   </style>
 </head>
 <body>
-  <header id="top" class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+  <header id="top" class="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
       <a href="#top" class="flex items-center gap-3">
-        <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/40 bg-yellow-400 text-black shadow-lg shadow-yellow-400/15">
-          <span class="font-display text-xl">OFC</span>
-        </div>
+        <img src="assets/logo.png" alt="Logo Owl Fight Center" class="h-12 w-12 rounded-full object-cover ring-1 ring-yellow-400/50" />
         <div>
           <p class="font-display text-xl leading-none">OWL FIGHT</p>
           <p class="text-[11px] font-bold tracking-[.28em] text-yellow-400">CENTER</p>
         </div>
       </a>
 
-      <nav class="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide text-white/75 lg:flex">
+      <nav class="hidden items-center gap-7 text-xs font-black uppercase tracking-wide text-white/75 lg:flex">
         <a class="nav-link" href="#sobre">Sobre</a>
-        <a class="nav-link" href="#modalidades">Treinos</a>
         <a class="nav-link" href="#mestre">Mestre</a>
+        <a class="nav-link" href="#diferenciais">Diferenciais</a>
+        <a class="nav-link" href="#atletas">Atletas</a>
         <a class="nav-link" href="#horarios">Horários</a>
-        <a class="nav-link" href="#estrutura">Estrutura</a>
+        <a class="nav-link" href="#galeria">Galeria</a>
         <a class="nav-link" href="#contato">Contato</a>
       </nav>
 
-      <a href="https://wa.me/5599981699364" target="_blank" class="hidden rounded-full px-5 py-3 text-sm font-black uppercase btn-gold lg:inline-flex">Agendar aula</a>
+      <a href="https://wa.me/5599981699364?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20treinos%20da%20Owl%20Fight%20Center" target="_blank" class="hidden rounded-full px-5 py-3 text-sm font-black uppercase btn-gold lg:inline-flex">Agendar aula</a>
 
       <button id="menuBtn" class="rounded-xl border border-white/15 p-3 lg:hidden" aria-label="Abrir menu">
         <span class="block h-0.5 w-6 bg-white"></span>
@@ -188,149 +191,126 @@
         <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
       </button>
     </div>
+
     <div id="mobileMenu" class="mobile-menu border-t border-white/10 bg-black/95 lg:hidden">
       <div class="mx-auto grid max-w-7xl gap-4 px-5 py-5 text-sm font-bold uppercase text-white/80">
         <a href="#sobre">Sobre</a>
-        <a href="#modalidades">Treinos</a>
         <a href="#mestre">Mestre</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#atletas">Atletas</a>
         <a href="#horarios">Horários</a>
-        <a href="#estrutura">Estrutura</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#galeria">Galeria</a>
         <a href="#contato">Contato</a>
-        <a href="https://wa.me/5599981699364" target="_blank" class="mt-2 rounded-full px-5 py-3 text-center font-black btn-gold">Agendar aula</a>
+        <a href="https://wa.me/5599981699364?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20treinos%20da%20Owl%20Fight%20Center" target="_blank" class="mt-2 rounded-full px-5 py-3 text-center font-black btn-gold">Agendar aula</a>
       </div>
     </div>
   </header>
 
   <main>
     <section class="hero-bg grain relative min-h-screen overflow-hidden pt-28">
-      <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#050505] to-transparent"></div>
-      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 pt-16 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:pt-24">
+      <div class="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#050505] to-transparent"></div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 pt-14 lg:grid-cols-[1.1fr_.9fr] lg:px-8 lg:pt-24">
         <div class="reveal">
           <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-yellow-400/25 bg-yellow-400/10 px-4 py-2 text-xs font-black uppercase tracking-[.2em] text-yellow-300">
-            Muay Thai em Timon
+            Única 100% especializada em Muay Thai de Timon
           </div>
-          <h1 class="font-display text-6xl uppercase leading-[.9] sm:text-7xl lg:text-8xl">
-            Força.<br>
-            Técnica.<br>
-            <span class="gold-text">Disciplina.</span>
+          <h1 class="font-display text-6xl uppercase leading-[.88] sm:text-7xl lg:text-8xl">
+            Treine forte.<br>
+            lute melhor.<br>
+            <span class="gold-text">evolua todo dia.</span>
           </h1>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-white/72">
-            A Owl Fight Center é a única academia 100% especializada em Muay Thai de Timon. Do básico ao avançado, aqui você treina corpo, mente e atitude.
+            A Owl Fight Center une técnica, disciplina e intensidade para transformar corpo e mente. Treinos para iniciantes, alunos em evolução e atletas que buscam alto rendimento.
           </p>
           <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href="https://wa.me/5599981699364" target="_blank" class="rounded-full px-7 py-4 text-center text-sm font-black uppercase btn-gold">Começar agora</a>
-            <a href="#horarios" class="rounded-full px-7 py-4 text-center text-sm font-black uppercase btn-dark">Ver horários</a>
+            <a href="https://wa.me/5599981699364?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20aula%20experimental%20na%20Owl%20Fight%20Center" target="_blank" class="rounded-full px-7 py-4 text-center text-sm font-black uppercase btn-gold">Marcar aula experimental</a>
+            <a href="#atletas" class="rounded-full px-7 py-4 text-center text-sm font-black uppercase btn-dark">Conhecer atletas</a>
           </div>
 
           <div class="mt-12 grid max-w-2xl grid-cols-3 gap-3 sm:gap-5">
             <div class="glass rounded-3xl p-5">
               <p class="font-display text-3xl gold-text">100%</p>
-              <p class="mt-1 text-xs font-bold uppercase tracking-wider text-white/55">Especializada</p>
+              <p class="mt-1 text-xs font-bold uppercase tracking-wider text-white/55">Muay Thai</p>
             </div>
             <div class="glass rounded-3xl p-5">
               <p class="font-display text-3xl gold-text">16+</p>
-              <p class="mt-1 text-xs font-bold uppercase tracking-wider text-white/55">Anos de experiência</p>
+              <p class="mt-1 text-xs font-bold uppercase tracking-wider text-white/55">Anos no esporte</p>
             </div>
             <div class="glass rounded-3xl p-5">
-              <p class="font-display text-3xl gold-text">0→∞</p>
-              <p class="mt-1 text-xs font-bold uppercase tracking-wider text-white/55">Do básico ao avançado</p>
+              <p class="font-display text-3xl gold-text">B→A</p>
+              <p class="mt-1 text-xs font-bold uppercase tracking-wider text-white/55">Básico ao avançado</p>
             </div>
           </div>
         </div>
 
-        <div class="relative reveal">
-          <div class="absolute -right-8 top-12 h-64 w-64 rounded-full bg-yellow-400/20 blur-3xl"></div>
+        <div class="reveal relative">
+          <div class="absolute -right-8 top-10 h-72 w-72 rounded-full bg-yellow-400/20 blur-3xl"></div>
           <div class="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-3 shadow-2xl shadow-black/50">
-            <img class="diagonal h-[540px] w-full rounded-[2rem] object-cover" src="https://images.unsplash.com/photo-1517438322307-e67111335449?auto=format&fit=crop&w=1000&q=80" alt="Atleta treinando luta">
-            <div class="absolute bottom-8 left-8 right-8 rounded-3xl border border-white/15 bg-black/70 p-6 backdrop-blur-xl">
-              <p class="text-sm font-bold uppercase tracking-[.22em] text-yellow-300">Primeira aula</p>
-              <p class="mt-2 text-2xl font-black">Entre no tatame e sinta a evolução desde o primeiro treino.</p>
+            <img class="h-[540px] w-full rounded-[2rem] object-cover" src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1100&q=80" alt="Treino de luta em academia">
+            <div class="absolute bottom-8 left-8 right-8 rounded-3xl border border-white/15 bg-black/75 p-6 backdrop-blur-xl">
+              <div class="mb-3 flex items-center gap-3">
+                <img src="assets/logo.png" alt="Logo Owl Fight Center" class="h-10 w-10 rounded-full object-cover">
+                <p class="text-sm font-black uppercase tracking-[.22em] text-yellow-300">Owl Fight Center</p>
+              </div>
+              <p class="text-2xl font-black leading-tight">Entre no tatame e sinta a evolução desde o primeiro treino.</p>
             </div>
           </div>
-          <div class="floating-card absolute -left-5 top-16 hidden rounded-3xl border border-yellow-400/25 bg-black/75 p-5 shadow-xl backdrop-blur-xl md:block">
-            <p class="font-display text-4xl text-yellow-400">MUAY</p>
-            <p class="font-display -mt-1 text-4xl text-white">THAI</p>
-          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden border-y border-white/10 bg-yellow-400 py-4 text-black">
+      <div class="marquee gap-10 whitespace-nowrap font-display text-3xl uppercase">
+        <span>Muay Thai</span><span>Disciplina</span><span>Força</span><span>Técnica</span><span>Respeito</span><span>Condicionamento</span><span>Alto rendimento</span>
+        <span>Muay Thai</span><span>Disciplina</span><span>Força</span><span>Técnica</span><span>Respeito</span><span>Condicionamento</span><span>Alto rendimento</span>
       </div>
     </section>
 
     <section id="sobre" class="relative py-24">
-      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.95fr_1.05fr] lg:px-8">
         <div class="reveal overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3">
-          <img class="h-[520px] w-full rounded-[1.5rem] object-cover" src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&w=1000&q=80" alt="Treino intenso de Muay Thai">
+          <img class="h-[520px] w-full rounded-[1.5rem] object-cover" src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&w=1100&q=80" alt="Lutadores treinando Muay Thai">
         </div>
         <div class="reveal flex flex-col justify-center">
           <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Sobre a academia</p>
-          <h2 class="section-title text-5xl sm:text-6xl">O lugar onde o treino vira mentalidade.</h2>
+          <h2 class="section-title text-5xl sm:text-6xl">Um centro de treino feito para evolução real.</h2>
           <p class="mt-7 text-lg leading-8 text-white/68">
-            A Owl Fight Center nasceu para quem busca um treino real, técnico e transformador. Uma academia com foco total em Muay Thai, preparada para receber iniciantes, alunos em evolução e atletas que querem competir em alto nível.
+            A Owl Fight Center é uma academia especializada em Muay Thai, com aulas pensadas para quem quer começar do zero, melhorar condicionamento, aprender defesa pessoal ou se preparar para competição. O foco é treinar com seriedade, técnica e constância.
           </p>
           <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="fight-card rounded-3xl p-6">
+            <div class="card rounded-3xl p-6">
               <p class="text-2xl font-black text-yellow-400">01</p>
-              <h3 class="mt-3 text-xl font-black">Base técnica</h3>
-              <p class="mt-2 text-sm leading-6 text-white/60">Aprenda postura, movimentação, golpes, defesa, combinações e condicionamento.</p>
+              <h3 class="mt-3 text-xl font-black">Treino para iniciantes</h3>
+              <p class="mt-2 text-sm leading-6 text-white/60">Acompanhamento para aprender postura, golpes, defesa, movimentação e ritmo.</p>
             </div>
-            <div class="fight-card rounded-3xl p-6">
+            <div class="card rounded-3xl p-6">
               <p class="text-2xl font-black text-yellow-400">02</p>
-              <h3 class="mt-3 text-xl font-black">Evolução constante</h3>
-              <p class="mt-2 text-sm leading-6 text-white/60">Treinos pensados para melhorar físico, disciplina, confiança e performance.</p>
+              <h3 class="mt-3 text-xl font-black">Formação de atletas</h3>
+              <p class="mt-2 text-sm leading-6 text-white/60">Preparação técnica e física para quem deseja competir e representar a equipe.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="modalidades" class="bg-[#0b0b0b] py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="reveal max-w-3xl">
-          <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Treinos</p>
-          <h2 class="section-title text-5xl sm:text-6xl">Do primeiro golpe ao alto rendimento.</h2>
-        </div>
-
-        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          <article class="fight-card reveal rounded-[2rem] p-7">
-            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">1</div>
-            <h3 class="text-2xl font-black">Iniciante</h3>
-            <p class="mt-3 text-sm leading-6 text-white/60">Para quem nunca treinou e quer aprender com segurança, sem pressão e com acompanhamento.</p>
-          </article>
-          <article class="fight-card reveal rounded-[2rem] p-7">
-            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">2</div>
-            <h3 class="text-2xl font-black">Intermediário</h3>
-            <p class="mt-3 text-sm leading-6 text-white/60">Combinações, ritmo, defesa, resistência e domínio técnico para evoluir de verdade.</p>
-          </article>
-          <article class="fight-card reveal rounded-[2rem] p-7">
-            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">3</div>
-            <h3 class="text-2xl font-black">Avançado</h3>
-            <p class="mt-3 text-sm leading-6 text-white/60">Treinos mais intensos, estratégia, sparring controlado e refinamento de performance.</p>
-          </article>
-          <article class="fight-card reveal rounded-[2rem] p-7">
-            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">4</div>
-            <h3 class="text-2xl font-black">Atletas</h3>
-            <p class="mt-3 text-sm leading-6 text-white/60">Preparação focada para competição, com disciplina, lapidação técnica e mentalidade de luta.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="mestre" class="relative overflow-hidden py-24">
+    <section id="mestre" class="relative overflow-hidden bg-[#0b0b0b] py-24">
       <div class="absolute right-0 top-0 h-full w-1/2 bg-yellow-400/5 blur-3xl"></div>
       <div class="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_.95fr] lg:px-8">
         <div class="reveal flex flex-col justify-center">
           <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Mestre</p>
           <h2 class="section-title text-5xl sm:text-7xl">Jhonata Souza</h2>
           <p class="mt-7 text-lg leading-8 text-white/68">
-            Com 16 anos de experiência no Muay Thai, o professor Jhonata Souza é treinador de atletas campeões nacionais e internacionais, além de ex-atleta, árbitro e formado em Educação Física.
+            Com 16 anos de experiência no Muay Thai, o professor Jhonata Souza é treinador de atletas campeões nacionais e internacionais, além de ex-atleta, árbitro e formado em Educação Física. Sua trajetória une vivência de ringue, didática e compromisso com a evolução dos alunos.
           </p>
           <div class="mt-8 grid gap-4 sm:grid-cols-2">
             <div class="glass rounded-3xl p-6">
-              <p class="font-display text-4xl text-yellow-400">16</p>
+              <p class="font-display text-4xl text-yellow-400">16+</p>
               <p class="font-bold uppercase text-white/70">anos no Muay Thai</p>
             </div>
             <div class="glass rounded-3xl p-6">
               <p class="font-display text-4xl text-yellow-400">PRO</p>
-              <p class="font-bold uppercase text-white/70">atletas campeões</p>
+              <p class="font-bold uppercase text-white/70">treinador de atletas</p>
             </div>
             <div class="glass rounded-3xl p-6">
               <p class="font-display text-4xl text-yellow-400">EF</p>
@@ -343,23 +323,113 @@
           </div>
         </div>
         <div class="reveal overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-3">
-          <img class="h-[610px] w-full rounded-[2rem] object-cover" src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?auto=format&fit=crop&w=1000&q=80" alt="Professor de luta em academia">
+          <img class="h-[610px] w-full rounded-[2rem] object-cover" src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?auto=format&fit=crop&w=1100&q=80" alt="Professor de luta em academia">
         </div>
       </div>
     </section>
 
-    <section id="horarios" class="bg-[#0b0b0b] py-24">
+    <section id="diferenciais" class="py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-3xl">
+          <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Diferenciais</p>
+          <h2 class="section-title text-5xl sm:text-6xl">Por que treinar na Owl?</h2>
+          <p class="mt-6 text-lg leading-8 text-white/65">Uma rotina de treino forte, organizada e focada no desenvolvimento completo do aluno.</p>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <article class="card reveal rounded-[2rem] p-7">
+            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">01</div>
+            <h3 class="text-2xl font-black">Especialização total</h3>
+            <p class="mt-3 text-sm leading-6 text-white/60">Foco 100% em Muay Thai, com treino direcionado e identidade forte.</p>
+          </article>
+          <article class="card reveal rounded-[2rem] p-7">
+            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">02</div>
+            <h3 class="text-2xl font-black">Base segura</h3>
+            <p class="mt-3 text-sm leading-6 text-white/60">Aulas para iniciantes aprenderem sem medo, com técnica e progressão.</p>
+          </article>
+          <article class="card reveal rounded-[2rem] p-7">
+            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">03</div>
+            <h3 class="text-2xl font-black">Equipe competitiva</h3>
+            <p class="mt-3 text-sm leading-6 text-white/60">Preparação para eventos, graduações e competições.</p>
+          </article>
+          <article class="card reveal rounded-[2rem] p-7">
+            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-2xl font-black text-black">04</div>
+            <h3 class="text-2xl font-black">Mente forte</h3>
+            <p class="mt-3 text-sm leading-6 text-white/60">Disciplina, respeito, confiança e constância dentro e fora do treino.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="atletas" class="bg-[#0b0b0b] py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-3xl">
+            <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Atletas</p>
+            <h2 class="section-title text-5xl sm:text-6xl">Nomes que representam a equipe.</h2>
+            <p class="mt-6 text-lg leading-8 text-white/65">Área pronta para apresentar atletas da academia, histórico, categoria, conquistas e próximas lutas. Os nomes abaixo são exemplos editáveis.</p>
+          </div>
+          <a href="https://www.instagram.com/owlfightcenter/" target="_blank" class="rounded-full px-7 py-4 text-center text-sm font-black uppercase btn-dark">Ver Instagram</a>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="card reveal overflow-hidden rounded-[2rem]">
+            <img src="https://images.unsplash.com/photo-1591117207239-788bf8de6c3b?auto=format&fit=crop&w=900&q=80" alt="Atleta de Muay Thai" class="athlete-img h-80 w-full object-cover">
+            <div class="p-7">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-2xl font-black">Atleta Owl</h3>
+                  <p class="mt-1 text-sm font-bold uppercase tracking-widest text-yellow-400">Peso leve</p>
+                </div>
+                <img src="assets/logo.png" alt="Logo Owl" class="h-12 w-12 rounded-full object-cover">
+              </div>
+              <p class="mt-5 text-sm leading-6 text-white/60">Perfil para destacar tempo de treino, principais lutas, evolução e objetivo dentro da equipe.</p>
+            </div>
+          </article>
+
+          <article class="card reveal overflow-hidden rounded-[2rem]">
+            <img src="https://images.unsplash.com/photo-1584466977773-e625c37cdd50?auto=format&fit=crop&w=900&q=80" alt="Atleta treinando luta" class="athlete-img h-80 w-full object-cover">
+            <div class="p-7">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-2xl font-black">Promessa da equipe</h3>
+                  <p class="mt-1 text-sm font-bold uppercase tracking-widest text-yellow-400">Competição</p>
+                </div>
+                <img src="assets/logo.png" alt="Logo Owl" class="h-12 w-12 rounded-full object-cover">
+              </div>
+              <p class="mt-5 text-sm leading-6 text-white/60">Espaço para falar sobre preparação, conquistas, próxima luta e dedicação nos treinos.</p>
+            </div>
+          </article>
+
+          <article class="card reveal overflow-hidden rounded-[2rem]">
+            <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?auto=format&fit=crop&w=900&q=80" alt="Atleta em preparação física" class="athlete-img h-80 w-full object-cover">
+            <div class="p-7">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-2xl font-black">Aluno destaque</h3>
+                  <p class="mt-1 text-sm font-bold uppercase tracking-widest text-yellow-400">Evolução</p>
+                </div>
+                <img src="assets/logo.png" alt="Logo Owl" class="h-12 w-12 rounded-full object-cover">
+              </div>
+              <p class="mt-5 text-sm leading-6 text-white/60">Ideal para mostrar histórias reais de alunos que começaram do básico e evoluíram.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="horarios" class="py-24">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="grid gap-12 lg:grid-cols-[.85fr_1.15fr]">
           <div class="reveal">
             <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Horários</p>
             <h2 class="section-title text-5xl sm:text-6xl">Escolha seu horário e entre no ritmo.</h2>
             <p class="mt-7 text-lg leading-8 text-white/65">
-              Monte sua rotina de treino durante a semana. Os horários abaixo foram organizados em um visual próprio para o site, sem depender da arte do Instagram.
+              A grade foi transformada em uma seção própria para o site, mais limpa, responsiva e fácil de consultar no celular.
             </p>
             <div class="mt-8 rounded-[2rem] border border-yellow-400/25 bg-yellow-400/10 p-6">
-              <p class="text-lg font-black text-yellow-300">Atenção</p>
-              <p class="mt-2 text-sm leading-6 text-white/65">Confirme a disponibilidade da turma pelo WhatsApp antes de ir para a primeira aula.</p>
+              <p class="text-lg font-black text-yellow-300">Primeira aula?</p>
+              <p class="mt-2 text-sm leading-6 text-white/65">Chame no WhatsApp para confirmar turma, horário disponível e orientações antes de começar.</p>
             </div>
           </div>
 
@@ -405,28 +475,57 @@
       </div>
     </section>
 
-    <section id="estrutura" class="py-24">
+    <section id="depoimentos" class="bg-[#0b0b0b] py-24">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div class="max-w-3xl">
-            <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Estrutura</p>
-            <h2 class="section-title text-5xl sm:text-6xl">Ambiente de treino sério, direto e motivador.</h2>
-          </div>
-          <a href="#contato" class="rounded-full px-7 py-4 text-center text-sm font-black uppercase btn-dark">Conhecer a academia</a>
+        <div class="reveal max-w-3xl">
+          <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Depoimentos</p>
+          <h2 class="section-title text-5xl sm:text-6xl">Quem treina sente a diferença.</h2>
         </div>
 
         <div class="mt-12 grid gap-5 md:grid-cols-3">
-          <div class="reveal overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 md:col-span-2">
-            <img class="h-[420px] w-full rounded-[1.5rem] object-cover" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=80" alt="Academia moderna">
+          <article class="card reveal rounded-[2rem] p-7">
+            <p class="text-5xl text-yellow-400">“</p>
+            <p class="mt-2 leading-7 text-white/70">Comecei sem saber nada e hoje sinto mais confiança, preparo físico e disciplina.</p>
+            <p class="mt-6 font-black">Aluno iniciante</p>
+            <p class="text-sm text-yellow-400">Evolução pessoal</p>
+          </article>
+          <article class="card reveal rounded-[2rem] p-7">
+            <p class="text-5xl text-yellow-400">“</p>
+            <p class="mt-2 leading-7 text-white/70">O treino é intenso, mas muito bem orientado. Dá para sentir a técnica evoluindo.</p>
+            <p class="mt-6 font-black">Aluno intermediário</p>
+            <p class="text-sm text-yellow-400">Técnica e constância</p>
+          </article>
+          <article class="card reveal rounded-[2rem] p-7">
+            <p class="text-5xl text-yellow-400">“</p>
+            <p class="mt-2 leading-7 text-white/70">A equipe incentiva, corrige e puxa o melhor de cada aluno dentro do treino.</p>
+            <p class="mt-6 font-black">Atleta da equipe</p>
+            <p class="text-sm text-yellow-400">Alto rendimento</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-3xl">
+            <p class="mb-4 text-sm font-black uppercase tracking-[.28em] text-yellow-400">Galeria</p>
+            <h2 class="section-title text-5xl sm:text-6xl">Treinos, eventos e graduações.</h2>
+            <p class="mt-6 text-lg leading-8 text-white/65">As imagens abaixo são exemplos da web. Depois, é só substituir pelas fotos reais da academia, alunos, atletas e eventos.</p>
           </div>
-          <div class="reveal grid gap-5">
-            <div class="fight-card rounded-[2rem] p-7">
-              <h3 class="text-2xl font-black">Treino guiado</h3>
-              <p class="mt-3 text-sm leading-6 text-white/60">Aulas com orientação para corrigir técnica, postura e evolução física.</p>
-            </div>
-            <div class="fight-card rounded-[2rem] p-7">
-              <h3 class="text-2xl font-black">Comunidade forte</h3>
-              <p class="mt-3 text-sm leading-6 text-white/60">Um ambiente de disciplina, respeito e energia para manter a constância.</p>
+          <a href="https://www.instagram.com/owlfightcenter/" target="_blank" class="rounded-full px-7 py-4 text-center text-sm font-black uppercase btn-dark">Abrir Instagram</a>
+        </div>
+
+        <div class="mt-12 grid auto-rows-[250px] gap-5 md:grid-cols-4">
+          <img class="reveal h-full w-full rounded-[2rem] border border-white/10 object-cover md:col-span-2 md:row-span-2" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=80" alt="Treino em academia">
+          <img class="reveal h-full w-full rounded-[2rem] border border-white/10 object-cover" src="https://images.unsplash.com/photo-1517438322307-e67111335449?auto=format&fit=crop&w=900&q=80" alt="Atleta em treino">
+          <img class="reveal h-full w-full rounded-[2rem] border border-white/10 object-cover" src="https://images.unsplash.com/photo-1591117207239-788bf8de6c3b?auto=format&fit=crop&w=900&q=80" alt="Treino de luta">
+          <img class="reveal h-full w-full rounded-[2rem] border border-white/10 object-cover" src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?auto=format&fit=crop&w=900&q=80" alt="Professor de luta">
+          <div class="reveal flex h-full flex-col justify-between rounded-[2rem] border border-yellow-400/25 bg-yellow-400 p-7 text-black">
+            <img src="assets/logo.png" alt="Logo Owl" class="h-16 w-16 rounded-full object-cover">
+            <div>
+              <p class="font-display text-4xl uppercase leading-none">Faça parte da equipe</p>
+              <p class="mt-3 text-sm font-bold text-black/70">Do básico ao avançado, a evolução começa na decisão de entrar.</p>
             </div>
           </div>
         </div>
@@ -437,10 +536,10 @@
       <div class="absolute -left-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full border-[40px] border-black/10"></div>
       <div class="relative mx-auto grid max-w-7xl items-center gap-8 px-5 lg:grid-cols-[1fr_auto] lg:px-8">
         <div class="reveal">
-          <p class="font-black uppercase tracking-[.28em]">Pronto para começar?</p>
-          <h2 class="mt-3 font-display text-5xl uppercase leading-none sm:text-7xl">Sua evolução começa no primeiro treino.</h2>
+          <p class="font-black uppercase tracking-[.28em]">Comece no seu ritmo</p>
+          <h2 class="mt-3 font-display text-5xl uppercase leading-none sm:text-7xl">Do básico ao avançado: seu primeiro treino começa agora.</h2>
         </div>
-        <a href="https://wa.me/5599981699364" target="_blank" class="reveal rounded-full bg-black px-8 py-5 text-center text-sm font-black uppercase text-white transition hover:-translate-y-1">Chamar no WhatsApp</a>
+        <a href="https://wa.me/5599981699364?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20a%20treinar%20Muay%20Thai%20na%20Owl%20Fight%20Center" target="_blank" class="reveal rounded-full bg-black px-8 py-5 text-center text-sm font-black uppercase text-white transition hover:-translate-y-1">Chamar no WhatsApp</a>
       </div>
     </section>
   </main>
@@ -449,15 +548,17 @@
     <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-4 lg:px-8">
       <div class="md:col-span-2">
         <div class="flex items-center gap-3">
-          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-yellow-400 text-black">
-            <span class="font-display text-xl">OFC</span>
-          </div>
+          <img src="assets/logo.png" alt="Logo Owl Fight Center" class="h-14 w-14 rounded-full object-cover ring-1 ring-yellow-400/50" />
           <div>
             <p class="font-display text-2xl leading-none">OWL FIGHT CENTER</p>
-            <p class="text-xs font-bold uppercase tracking-[.25em] text-yellow-400">Muay Thai</p>
+            <p class="text-xs font-bold uppercase tracking-[.25em] text-yellow-400">Muay Thai em Timon</p>
           </div>
         </div>
-        <p class="mt-6 max-w-lg leading-7 text-white/55">Academia 100% especializada em Muay Thai em Timon. Do básico ao avançado, com treino técnico, intenso e transformador.</p>
+        <p class="mt-6 max-w-lg leading-7 text-white/55">Academia 100% especializada em Muay Thai em Timon. Treinos para iniciantes, alunos em evolução e atletas.</p>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a href="https://wa.me/5599981699364?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20Owl%20Fight%20Center" target="_blank" class="rounded-full px-6 py-3 text-center text-sm font-black uppercase btn-gold">WhatsApp</a>
+          <a href="https://www.instagram.com/owlfightcenter/" target="_blank" class="rounded-full px-6 py-3 text-center text-sm font-black uppercase btn-dark">Instagram</a>
+        </div>
       </div>
       <div>
         <h4 class="font-black uppercase text-white">Contato</h4>
@@ -471,9 +572,11 @@
         <h4 class="font-black uppercase text-white">Menu</h4>
         <div class="mt-5 grid gap-3 text-white/60">
           <a href="#sobre" class="hover:text-yellow-400">Sobre</a>
-          <a href="#modalidades" class="hover:text-yellow-400">Treinos</a>
           <a href="#mestre" class="hover:text-yellow-400">Mestre</a>
+          <a href="#diferenciais" class="hover:text-yellow-400">Diferenciais</a>
+          <a href="#atletas" class="hover:text-yellow-400">Atletas</a>
           <a href="#horarios" class="hover:text-yellow-400">Horários</a>
+          <a href="#galeria" class="hover:text-yellow-400">Galeria</a>
         </div>
       </div>
     </div>
@@ -481,6 +584,10 @@
       © <span id="year"></span> Owl Fight Center. Todos os direitos reservados.
     </div>
   </footer>
+
+  <a href="https://wa.me/5599981699364?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20treinos%20da%20Owl%20Fight%20Center" target="_blank" class="fixed bottom-5 right-5 z-40 rounded-full bg-yellow-400 px-5 py-4 text-sm font-black uppercase text-black shadow-2xl shadow-yellow-400/25 transition hover:-translate-y-1">
+    WhatsApp
+  </a>
 
   <script>
     const menuBtn = document.getElementById('menuBtn');
